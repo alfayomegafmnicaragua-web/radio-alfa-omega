@@ -1,0 +1,9 @@
+RADIO ALFA Y OMEGA NICARAGUA - PWA INDEPENDIENTE
+
+Esta carpeta contiene una PWA independiente. No modifiques ni subas estos archivos a la raíz de www.alfayomeganicaragua.com.
+
+Publicación gratuita sugerida: GitHub Pages en un repositorio público llamado radio-alfa-omega. Sube el CONTENIDO de esta carpeta (index.html, manifest.json, sw.js e icons/) a la raíz del repositorio. En Settings > Pages selecciona Deploy from a branch, Branch main y folder /(root), guarda y espera la URL.
+
+Luego abre la URL publicada en Safari en iPhone > Compartir > Añadir a pantalla de inicio > Añadir. En Samsung, abre la URL en Chrome > menú ⋮ > Instalar aplicación o Añadir a pantalla de inicio.
+
+Los botones de Facebook/YouTube/TikTok abren búsquedas del nombre de la radio porque no se proporcionaron las URL oficiales exactas de los perfiles. El botón de WhatsApp usa +505 8522 1755. La reproducción en segundo plano y pantalla bloqueada puede variar según iOS, Android, navegador y servidor de audio.

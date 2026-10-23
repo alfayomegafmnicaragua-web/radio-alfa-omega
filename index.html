@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08172c"><meta name="description" content="Escucha Radio Alfa y Omega Nicaragua 100.5 FM en vivo.">
+<link rel="manifest" href="./manifest.json"><link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+<title>Radio Alfa y Omega Nicaragua 100.5 FM</title>
+<style>
+:root{color-scheme:dark;--gold:#f5c45a;--blue:#0d2d50}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at top,#153c62 0,#08172c 58%,#050b15 100%);color:#fff;display:flex;justify-content:center;padding:22px 15px 34px}.wrap{width:100%;max-width:540px;text-align:center}.logo{width:145px;height:145px;object-fit:contain;border-radius:28px;margin:12px auto 16px;filter:drop-shadow(0 8px 20px #0008)}h1{font-size:clamp(1.6rem,6vw,2.15rem);line-height:1.1;margin:0 0 8px} .freq{color:var(--gold);font-weight:800;letter-spacing:.16em;margin:0 0 25px}.tag{color:#d8e5f3;margin:0 0 24px}.play{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:19px 15px;border:0;border-radius:17px;background:linear-gradient(135deg,#f5c45a,#e99a2b);color:#111827;font-size:1.08rem;font-weight:900;box-shadow:0 10px 28px #0005;cursor:pointer}.play:active{transform:scale(.99)}.status{font-size:.88rem;color:#c7d8e9;min-height:25px;margin:12px 0 22px}.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.link{display:block;text-decoration:none;color:#fff;background:#ffffff12;border:1px solid #ffffff22;padding:14px 10px;border-radius:13px;font-weight:700}.link:hover{background:#ffffff20}.site{margin-top:12px}.foot{font-size:.78rem;color:#9fb3c8;margin-top:26px}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style></head>
+<body><main class="wrap">
+<img class="logo" src="./icons/icon-192x192.png" alt="Logo de Radio Alfa y Omega Nicaragua">
+<h1>Radio Alfa y Omega<br>Nicaragua</h1><p class="freq">100.5 FM · NICARAGUA</p>
+<p class="tag">La radio que te acerca a Dios</p>
+<button class="play" id="play" type="button"><span id="symbol">▶</span><span id="label">ESCUCHAR EN VIVO</span></button>
+<audio id="radio" preload="none" playsinline></audio><p class="status" id="status" aria-live="polite">Pulsa el botón para escuchar la transmisión en vivo.</p>
+<div class="links">
+<a class="link" href="https://wa.me/50585221755" target="_blank" rel="noopener">WhatsApp</a>
+<a class="link" href="https://www.facebook.com/search/top?q=Radio%20Alfa%20y%20Omega%20Nicaragua" target="_blank" rel="noopener">Facebook</a>
+<a class="link" href="https://www.youtube.com/results?search_query=Radio+Alfa+y+Omega+Nicaragua" target="_blank" rel="noopener">YouTube</a>
+<a class="link" href="https://www.tiktok.com/search?q=Radio%20Alfa%20y%20Omega%20Nicaragua" target="_blank" rel="noopener">TikTok</a>
+<a class="link site" style="grid-column:1/-1" href="https://www.alfayomeganicaragua.com/" target="_blank" rel="noopener">🌐 Visitar nuestra página web</a>
+<button class="link" id="share" style="grid-column:1/-1;cursor:pointer;font:inherit">↗ Compartir esta aplicación</button>
+</div><p class="foot">Radio Alfa y Omega Nicaragua · 100.5 FM</p>
+<script>
+const stream='https://sonic.inforadio997.com.ar/8124/stream';const audio=document.getElementById('radio');audio.src=stream;const btn=document.getElementById('play'),label=document.getElementById('label'),symbol=document.getElementById('symbol'),status=document.getElementById('status');
+btn.addEventListener('click',async()=>{if(!audio.paused){audio.pause();audio.src=stream;label.textContent='ESCUCHAR EN VIVO';symbol.textContent='▶';status.textContent='Transmisión pausada.';return}try{status.textContent='Conectando con la radio…';await audio.play();label.textContent='PAUSAR TRANSMISIÓN';symbol.textContent='Ⅱ';status.textContent='Estás escuchando Radio Alfa y Omega Nicaragua en vivo.'}catch(e){status.textContent='No se pudo iniciar. Comprueba tu conexión e inténtalo de nuevo.'}});
+audio.addEventListener('error',()=>{status.textContent='No se pudo conectar al audio. Inténtalo nuevamente en unos segundos.'});audio.addEventListener('playing',()=>{status.textContent='Estás escuchando Radio Alfa y Omega Nicaragua en vivo.'});
+document.getElementById('share').addEventListener('click',async()=>{const data={title:'Radio Alfa y Omega Nicaragua',text:'Escucha Radio Alfa y Omega Nicaragua 100.5 FM',url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);status.textContent='Enlace copiado para compartir.'}}catch(e){}});
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></main></body></html>
